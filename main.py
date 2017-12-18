@@ -4,7 +4,6 @@ from pprint import pprint
 import requests
 from bs4 import BeautifulSoup
 from user_agent import generate_user_agent
-from itertools import groupby
 import re
 import time
 
@@ -85,7 +84,7 @@ if __name__ == '__main__':
                 exit()
 
         urls_old = urls.copy()
-        urls = [i for i, _ in groupby(urls)]  # удаляем дубли
+        urls = list(set(urls))  # удаляем дубли
     else:
         urls.append(url)
         urls_old = urls.copy()
