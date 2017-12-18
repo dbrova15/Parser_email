@@ -113,7 +113,7 @@ if __name__ == '__main__':
 
         urls_old.extend(url_new)  # Добавляем новые урлы в список для отработаныых урлов
         urls.extend(url_new)  # добавлям новые урлы для парсинга
-        urls = [i for i, _ in groupby(urls)]  # удаляем дубли
+        urls = list(set(urls))  # удаляем дубли
         url_new.clear()
         t = round(((time.time() - time_start) / 60), 2)
         print("=" * 82)
